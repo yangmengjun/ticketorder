@@ -1,0 +1,22 @@
+server:
+  port: 8000
+spring:
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl_auto: update
+  h2:
+    console:
+      path: /h2-console               #h2 web控制台路径
+      enabled: true                   #开启 Web Console
+      settings:
+        web-allow-others: true        #允许远程访问 Web Console
+  datasource:
+    platform: h2                      #指定数据源类型
+    url: jdbc:h2:tcp://localhost//D:/software/H2/test
+    username: sa
+    password:
+    schema: classpath:schema.sql      #指定数据库的数据脚本
+    data: classpath:data.sql          #指定数据库的数据脚本
+    driver-class-name: org.h2.Driver
